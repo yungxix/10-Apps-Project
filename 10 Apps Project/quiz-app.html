@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quizo.css">
+</head>
+<body>
+    
+ <div class="quiz-container">
+       <div class="quiz-header">
+        <h1 id= "question">Queires </h1>
+        <ul>
+            <li><input type="radio" id="a"
+                name="answer" />
+                <label id ="a_text" for="">Question</label>
+            </li>
+            <li><input type="radio" id="b" 
+                name="answer" />
+                <label for=""  id ="b_text" >Question</label>
+            </li>
+            <li><input type="radio" id="c"
+                name="answer" />
+                <label for=""  id ="c_text" >Question</label>
+            </li>
+            <li><input type="radio" id="d"
+                name="answer" />
+                <label for=""  id ="d_text" >Question</label>
+            </li>
+        </ul>
+       </div>
+   
+
+    <button id="submit">Submit</button>
+ </div>
+
+
+
+
+
+<script>
+     
+const quizData = [ 
+  {
+    question: "What is your credit card issue",
+    a: 34561209,
+    b: 33098721,
+    c: 234567833,
+    d: 1000889939,
+    correct: c
+  },
+  {
+    question: "what is your secret code",
+    a: "My Favourite Country",
+    b: "Your Favourite Pet",
+    c: "Your Home Address",
+    d: "Your Best Fruit",
+    correct: 'd'
+  },
+  {
+    question: "What best describe your personality",
+    a: "introvert",
+    b: "Extrovert",
+    c: "Enthusiatic",
+    d: "Loveable",
+    correct: "a"
+  },
+  {
+    question: "What country do you currently live",
+    a: "Antartica",
+    b: "Oceania",
+    c: "Caribbean",
+    correct: 'c'
+  }
+];
+
+  const questionEl = document.getElementById('question');
+
+ const a_text = document.getElementById('a_text')
+
+ const b_text = document.getElementById('b_text')
+
+ const c_text = document.getElementById('c_text')
+
+ const d_text = document.getElementById('d_text')
+
+ const submitBtn = document.getElementById('submit');
+
+
+
+
+
+let currentQuiz = 0;
+
+loadQuiz();
+
+function loadQuiz() {
+  const currentQuizData = quizData
+  [currentQuiz];
+
+  questionEl.innerText = currentQuizData.
+  question;
+
+     a_text.innerText = currentQuizData.a;
+     b_text.innerText = currentQuizData.b;
+     c_text.innerText = currentQuizData.c;
+     d_text.innerText = currentQuizData.d;
+
+submitBtn.addEventListener('click', ()=> {
+
+currentQuiz++
+   if(currentQuiz < quizData.length) {
+    loadQuiz();
+   } else {
+       alert("You;ve finished loading the content.")
+   }
+});
+
+    </script>
+</body>
+</html>

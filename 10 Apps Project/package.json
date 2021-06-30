@@ -1,0 +1,14 @@
+{
+  "name": "10-apps-project",
+  "version": "1.0.0",
+  "description": "1. Countdown TImer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
